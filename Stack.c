@@ -42,11 +42,18 @@ void push(int data){
 
 int pop(){
 
+    if(stack.size>0){
+        int val = stack.top->data;
+        if(stack.size>1)
+        stack.top =stack.top->prev;
+        stack.size--;
+        return val;
+    }else{
 
-    int val = stack.top->data;
-    stack.top =stack.top->prev;
+        return -1;
 
-    return val;
+    }
+
 }
 
 int main(){
